@@ -9,25 +9,25 @@ export const values = [
     'id': 2,
     'name': 'High-Quality',
     'description': 'Guranteed',
-    'imageUrl': '/assets/images/icon-certificate.png',
+    'imageUrl': '/assets/images/Icon-certificate.png',
   },
   {
     'id': 3,
     'name': 'Reliable',
     'description': 'from $40',
-    'imageUrl': '/assets/images/icon-shield.png',
+    'imageUrl': '/assets/images/Icon-shield.png',
   },
   {
     'id': 4,
     'name': 'Global',
     'description': 'Ships to 50 countries',
-    'imageUrl': '/assets/images/icon-globe.png',
+    'imageUrl': '/assets/images/Icon-globe.png',
   },
   {
     'id': 5,
     'name': 'Customer Focus',
     'description': 'from $40',
-    'imageUrl': '/assets/images/icon-person.png',
+    'imageUrl': '/assets/images/Icon-person.png',
   },
   
 ]

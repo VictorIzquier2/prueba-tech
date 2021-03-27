@@ -31,7 +31,7 @@ export const categories = [
   },
   {
     'id': 6,
-    'name': 'Office Supples',
+    'name': 'OfficeSupples',
     'description': 'Subtitulo',
     'imageUrl': '/assets/images/Office.png',
   },

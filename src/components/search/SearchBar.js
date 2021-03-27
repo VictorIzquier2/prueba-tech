@@ -1,5 +1,25 @@
 import React from 'react'
 import { useForm } from '../../hooks/useForm';
+import styled from '@emotion/styled';
+
+const MainSearch = styled.div`
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 1.6rem;
+  form{
+    display: flex;
+  }
+  input{
+    border: none;
+  }
+
+  button {
+    border: none;
+  }
+  button img{
+    width: 1.6rem;
+  }
+`;
 
 export const SearchBar = ({history}) => {
   
@@ -18,9 +38,9 @@ export const SearchBar = ({history}) => {
       reset();
     }
   }
-
+  
   return (
-    <div>
+    <MainSearch>
       <form
         onClick={handleSearch}
       >
@@ -35,9 +55,9 @@ export const SearchBar = ({history}) => {
         />
         <button
           type='submit'
-          className='btn m-1 btn-block btn-outline-primary'
-        >Search</button>
+          className='btn btn-block btn-outline-primary'
+        ><img src='/assets/images/lent.png' /></button>
       </form>
-    </div>
+    </MainSearch>
   )
 }

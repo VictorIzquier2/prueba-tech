@@ -1,6 +1,34 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from 'react';
+import styled from '@emotion/styled';
+
 import { Redirect, useParams } from 'react-router-dom';
 import { getProductById } from '../selectors/getProductById';
+
+const Product = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 4rem auto!important;
+  width: 32.5rem;
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: var(--baseWhite);
+  border-radius: 2rem;
+
+
+  .maxWidth28 {
+    max-width: 28.5rem;
+  }
+
+  .maxWidth32 {
+    max-width: 32.5rem;
+  }
+
+  .details{
+    display: flex;
+    justify-content: space-between
+  }
+
+`;
 
 export const ProductScreen = ({history}) => {
 
@@ -23,14 +51,14 @@ export const ProductScreen = ({history}) => {
   const {name, description, imageUrl, prize, lastPrize, qualification} = product;
 
   return (
-    <div className='card'>
-      <img className='card-img-top "animate__animated animate__fadeInLeft' src={imageUrl} alt={name}/>
+    <Product className='card maxWidth32'>
+      {<img className='card-img-top maxWidth28 animate__animated animate__fadeInLeft' src={imageUrl} alt={name}/>}
       <div className='card-body'>
-        <h5 className='card-title'>
+        <h4 className='card-title'>
           {name}
-        </h5>
+        </h4>
         <p className='card-text'>{description}</p>
-        <div>
+        <div className='details'>
           <p className='card-text'>
             <small className='text-muted'>{lastPrize}</small>
           </p>
@@ -46,6 +74,6 @@ export const ProductScreen = ({history}) => {
         className='btn btn-outline-info'
         onClick={handleReturn}
       >Return</button>
-    </div>      
+    </Product>      
   )
 }

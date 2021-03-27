@@ -1,36 +1,38 @@
 import React from 'react';
+import styled from '@emotion/styled';
+
 import { CategoriesList } from '../../categories/CategoriesList';
 import { BrandsList} from '../../brands/brandsList';
 import {ValuesList} from '../../values/ValuesList';
 import { ProductsList } from '../../products/ProductsList';
 import { BlogsList } from '../../blog/BlogsList';
 import { Newsletter } from '../../newsletter/Newsletter';
+import { Intro } from '../../intro/Intro';
+import { Carrusel } from '../../carrusel/Carrusel';
+
+const Home = styled.div`
+  a{
+    color: var(--primary);
+    text-decoration: none;
+  };
+
+  .card{
+    padding: 2.4rem 4.8rem;
+    border: none;
+  }
+
+  .card-body.viewCat{ 
+    background-color: var(--light);
+    border-radius: 1.6rem;
+  }
+
+`
 
 export const HomeScreen = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-             <img 
-              src="/assets/images/main.jpg" 
-              className="d-block w-100" 
-              alt="daitool1">
-             </img>
-          </div>
-        </div>
-      </div>
-      <div className='card' style={{width: '25rem'}}>
-        <div className='card-body'>
-          <a href='http://google.es'>viewed category</a>
-          <h5 className='card-title'>Highlighted Product Category</h5>
-          <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-      </div>
-      <div>
-      
-      </div>
+    <Home>
+      <Carrusel/>
+      <Intro/>
       <CategoriesList/>
       <BrandsList/>
       <ValuesList/>
@@ -40,6 +42,6 @@ export const HomeScreen = () => {
         <img src="/assets/images/banner.png" className="img-fluid" alt="banner"/>
       </div>
       <Newsletter/>
-    </div>
+    </Home>
   )
 }

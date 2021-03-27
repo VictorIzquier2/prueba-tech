@@ -16,6 +16,7 @@ import { WoodworkingScreen } from '../components/woodworking/WoodworkingScreen';
 import {Footer} from '../ui/Footer';
 import { ProductScreen } from '../products/ProductScreen';
 import { SearchScreen } from '../components/search/SearchScreen';
+import { CategoriesScreen } from '../components/categories/CategoriesScreen';
 
 export const DashboardRoutes = ({history}) => {
   return (
@@ -51,150 +52,150 @@ export const DashboardRoutes = ({history}) => {
           body{
             font-size: 16px;
             font-size: 1.6rem;
-            line-height: 1.5;
+            line-height: 1.5rem;
             font-family: 'Mulish', sans-serif;
           }
 
           h1{
             font-weight: bold;
             font-size: 6.4rem;
-            line-height: 0.86;
+            line-height: 8.6rem;
             letter-spacing: 0.02rem;
           }
 
           h2{
             font-weight: 400;
             font-size: 4.6rem;
-            line-height: 0.62;
+            line-height: 6.2rem;
             letter-spacing: 0rem;
           }
 
           h3{
             font-weight: bold;
             font-size: 3rem;
-            line-height: 0.46;
+            line-height: 4.6rem;
             letter-spacing: 0.01rem;
           }
 
           h4{
             font-weight: bold;
             font-size: 2.4rem;
-            line-height: 0.32;
+            line-height: 3.2rem;
             letter-spacing: 0.02rem;
           }
 
           h4 .regular{
             font-weight: 400;
             font-size: 1.8rem;
-            line-height: 0.24;
+            line-height: 2.4rem;
             letter-spacing: 0.01rem;
           }
 
           h5{
             font-weight: bold;
             font-size: 6.4rem;
-            line-height: 0.86;
+            line-height: 8.6rem;
             letter-spacing: 0.02rem;
           }
 
           h6{
             font-weight: 600;
             font-size: 2.4rem;
-            line-height: 0.3;
+            line-height: 3rem;
             letter-spacing: 0.01rem;
           }
 
           h6 .selected{
             font-weight: bold;
             font-size: 2.4rem;
-            line-height: 0.3;
+            line-height: 3rem;
             letter-spacing: 0.01rem;
           }
 
           .copy{
             font-weight: 400;
             font-size: 1.8rem;
-            line-height: 0.34;
+            line-height: 3.4rem;
             letter-spacing: 0.02rem;
           }
 
           .inCopy .header {
             font-weight: bold;
             font-size: 2.4rem;
-            line-height: 0.3;
+            line-height: 3rem;
             letter-spacing: 0.02rem;
           }
 
           nav{
             font-weight: 600;
             font-size: 1.6rem;
-            line-height: 0.24;
+            line-height: 2.4rem;
             letter-spacing: 0.02rem
           }
 
           .breadcrumbs{
             font-weight: 400;
             font-size: 1.5rem;
-            line-height: 0.20;
+            line-height: 2rem;
             letter-spacing: 0.02rem
           }
 
           .button{
             font-weight: 600;
             font-size: 1.6rem;
-            line-height: 0.24;
+            line-height: 2.4rem;
             letter-spacing: 0.02rem
           }
 
           .selectedProducts{
             font-weight: bold;
             font-size: 2rem;
-            line-height: 0.28;
+            line-height: 2.8rem;
             letter-spacing: 0.02rem
           }
 
           .selectedProducts .smallerPrice{
             font-weight: 400;
             font-size: 2.4rem;
-            line-height: 0.86;
+            line-height: 8.6rem;
             letter-spacing: 0.02rem
           }
 
           .footer .header{
             font-weight: bold;
             font-size: 1.8rem;
-            line-height: 0.24;
+            line-height: 2.4rem;
             letter-spacing: 0.02rem
           }
           
           .footer .links{
             font-weight: 400;
             font-size: 1.6rem;
-            line-height: 0.36;
+            line-height: 3.6rem;
             letter-spacing: 0.02rem
           }
 
           .clientArea .header{
             font-weight: bold;
             font-size: 1.6rem;
-            line-height: 0.22;
+            line-height: 2.2rem;
             letter-spacing: 0.02rem
           }
 
           .clientArea .text{
             font-weight: 400;
             font-size: 1.6rem;
-            line-height: 0.32;
+            line-height: 3.2rem;
             letter-spacing: 0.02rem
           }
-
+          
           .clientArea .link{
             font-weight: 600;
             font-size: 1.4rem;
-            line-height: 0.22;
+            line-height: 2.2rem;
             letter-spacing: 0.02rem
           }
-
+          
         `}
       />
       <Navbar history={history}/>
@@ -206,10 +207,11 @@ export const DashboardRoutes = ({history}) => {
           <Route exact path='/tools' component={ToolsScreen}/>
           <Route exact path='/woodworking' component={WoodworkingScreen}/>
           <Route exact path='/gardening' component={GardeningScreen}/>
-          <Route exact path='/officesupplies' component={OfficeSuppliesScreen}/>
+          <Route exact path='/officesupples' component={OfficeSuppliesScreen}/>
           <Route exact path='/blog' component={BlogScreen}/>
           <Route exact path='/brands' component={BrandsScreen}/>
           <Route exact path='/aboutus' component={AboutUsScreen}/>
+          <Route exact path='/categories' component={CategoriesScreen} />
           <Route exact path='/product/:productId' component={ProductScreen}/>
           <Route exact path='/search/:search' component={SearchScreen}/>
           <Redirect to='/home' component={HomeScreen}/>
