@@ -3,42 +3,21 @@ import styled from '@emotion/styled';
 
 const NewsletterZone = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   background-color: var(--primary);
+  width: 100%;
   padding: 4rem;
   margin: 0;
 
   @media(max-width: 834px){
     flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
   }
 
   h4, p {
     color: var(--baseWhite);
-  }
-
-  .postcardsImg{
-    margin: 2rem;
-    position: relative;
-    width: 100%;
-  }
-
-  #pop-subscribe{
-    position: absolute;
-    top: -20vw;
-    left: 15vw;
-    transform: translate(-50%, -50%)
-  }
-  #pop-subscribe h1{
-    color: white;
-    margin: 0;
-  }
-
-  #pop-subscribe button{
-    background-color: var(--primary);
-    border: none;
-    padding: 1.25rem 2.5rem;
   }
 
   .general {
@@ -48,6 +27,20 @@ const NewsletterZone = styled.div`
   @media(max-width: 834px){
     .general{
       width: 100%
+    }
+  }
+
+  .postcards{
+    max-width: 10rem;
+    max-height: 10rem;
+    margin: 0 2rem;
+  }
+  
+  @media(max-width: 834px){
+    .postcards{
+      margin: 2rem;
+      max-width: 8rem;
+      max-height: 8rem
     }
   }
 
@@ -63,22 +56,25 @@ const NewsletterZone = styled.div`
 
   .newsletter {
     display: flex;
+    width: 35rem;
     padding: 1rem;
     background-color: var(--baseWhite);
     border-radius: 1rem;
+    width: 95%;
   }
   
  @media(max-width: 834px){
    .newsletter{
      flex-direction: column;
      background-color: var(--primary);
+     width: 100%;
    }
  }
  
   .newsletter input{
     width: 100%;
     border: none;
-    padding: 1.5rem 0;
+    padding: 1.5rem;
   }
 
   @media(max-width: 834px){
@@ -104,14 +100,8 @@ const NewsletterZone = styled.div`
 export const Newsletter = () => {
   return (
     <NewsletterZone className='row'>
-      <div className='col-2 postcardsImg'>
-        <div id='pop-subscribe'>
-          <h1>70% off</h1>
-          <button>Subscribe</button>
-        </div>
-        <img src="/assets/images/postcards.png" className="img-fluid" alt="banner"/>
-      </div>
-      <div className='general col-4'>
+        <img src="/assets/images/postcards.png" className="img-fluid postcards" alt="banner"/>
+      <div className='general col -4'>
         <h4>Sign Up for Newsletter</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>

@@ -56,7 +56,7 @@ export const SearchBar = ({history}) => {
         <button
           type='submit'
           className='btn btn-block btn-outline-primary'
-        ><img src='/assets/images/lent.png' /></button>
+        ><img src='/assets/images/lent.png' alt='Lent' /></button>
       </form>
     </MainSearch>
   )

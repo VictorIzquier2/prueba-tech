@@ -9,10 +9,18 @@ const BlogHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  h2{
-    margin: 2rem 4rem;
+  width: 100%;
+  
+  h4{
+    margin: 4rem 6rem;
     font-weight: bold;
+  }
+
+  @media(max-width: 768px){
+    h4{
+      color: var(--light);
+      margin: 3rem;
+    }
   }
 
   .nav-link{
@@ -24,19 +32,25 @@ const BlogHeader = styled.header`
 const Blogs = styled.div`
   display: flex;
   width: 90%;
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap;
-  margin: 4rem;
+  margin: 0rem auto 4rem auto;
   
   .blog {
     margin: 1rem;
-    max-width: calc(30% - 1rem);
+  }
+
+  @media(max-width: 768px){
+    .blog {
+      width: 100%;
+    }
+
   }
 
   .blog h4 {
     font-size: 1.5rem;
   }
-
+  
   .blog span{
     font-size: 1rem;
   }
@@ -47,7 +61,7 @@ export const BlogsList = () => {
   return (
     <Fragment>
       <BlogHeader className='header'>
-        <h2>Blog Posts</h2>
+        <h4>Blog Posts</h4>
         <NavLink className='nav-item nav-link' to='/blog'>+ View All</NavLink>
       </BlogHeader>
       <Blogs>

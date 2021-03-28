@@ -12,11 +12,9 @@ export const SearchScreen = ({match}) => {
 
   // Filtrar la búsqueda por nombre, descripción o categoría y optimizarla con el hook useMemo
   const productsFiltered = useMemo(() => products.filter(product => product.name.includes(q) || product.description.includes(q) || product.category.includes(q)), [q]);
-
+  
   return (
     <div>
-      <h4>Results</h4>
-
       {
         productsFiltered.map(product => (
           <ProductCard

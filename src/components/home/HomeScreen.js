@@ -9,8 +9,10 @@ import { BlogsList } from '../../blog/BlogsList';
 import { Newsletter } from '../../newsletter/Newsletter';
 import { Intro } from '../../intro/Intro';
 import { Carrusel } from '../../carrusel/Carrusel';
+import { Banner } from '../../banner/Banner';
 
 const Home = styled.div`
+
   a{
     color: var(--primary);
     text-decoration: none;
@@ -38,9 +40,7 @@ export const HomeScreen = () => {
       <ValuesList/>
       <ProductsList/>
       <BlogsList/>
-      <div>
-        <img src="/assets/images/banner.png" className="img-fluid" alt="banner"/>
-      </div>
+      <Banner/>
       <Newsletter/>
     </Home>
   )

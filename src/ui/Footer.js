@@ -1,10 +1,6 @@
 import React, { Fragment } from 'react'
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
-
-import { AboutUsScreen } from '../components/aboutUs/AboutUsScreen';
-import { BlogScreen } from '../components/blog/BlogScreen';
-import { BrandsScreen } from '../components/brands/BrandsScreen';
 
 const FooterStyled = styled.div`
   display: flex;
@@ -12,7 +8,6 @@ const FooterStyled = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin: 6rem 4rem;
-  width: 92%;
   
   @media(min-width: 768px){
     flex-direction: row;
@@ -106,11 +101,24 @@ const FooterStyled = styled.div`
   }
 
   #contact h4{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media(max-width: 768px){
+    #h4-contact {
+      display: none;
+      color: var(--baseWhite)!important;
+    }
   }
 
   #contact p{
     margin: 2rem 0;
+  }
+
+  @media(max-width: 768px){
+    .contact-p {
+      display: none;
+    }
   }
 
   #contact button{
@@ -143,6 +151,7 @@ const FooterStyled = styled.div`
   .contact-details{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
   }
 
   @media(min-width: 768px){
@@ -153,15 +162,23 @@ const FooterStyled = styled.div`
     }
   }
 
+  .contact-details h6{
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+  
   .contact-details button{
     margin: 0 auto;
     width: 10rem;
     border-radius: 1rem;
+    align-self: center;
   }
 
   .phone {
     color: var(--primary);
     font-weight: 600;
+    margin: .5rem!important;
   }
 
   .socialLink{
@@ -175,10 +192,21 @@ const FooterStyled = styled.div`
   }
 `;
 
+const FooterHr = styled.hr`
+  @media(max-width: 768px){
+    display: none;
+  }
+`;
+
 const Last = styled.footer`
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+
+  @media(max-width:768px){
+    border-top: 1px solid var(--light);
+    padding-top: 1rem;
+  }
 
   @media(max-width: 834px){
       flex-direction: column-reverse;
@@ -228,29 +256,29 @@ export const Footer = () => {
   return (
     <Fragment>
       <FooterStyled id='footer-styled'>
-        <div className='col-4' id='social-info'>
+        <div id='social-info'>
           <img src="/assets/images/logo-daitool-black.png" className="img-fluid logo" alt="Daitool black"/>
           <p>Daitool is the global reference site for high-quality, Japanese brand, industrial tools and supplies. We empower clients to build better, anywhere in the world.</p>
           <div className='socialMedia'>
-            <a className='socialLink card' href='https://www.youtube.com'>
+            <a className='socialLink card' href='https://www.youtube.com' target='_blank'  rel="noreferrer">
               <i className='fab fa-youtube'></i>
             </a>
-            <a className='socialLink card' href='https://www.linkedin.com'>
+            <a className='socialLink card' href='https://www.linkedin.com' target='_blank  rel="noreferrer"'>
               <i className='fab fa-linkedin'></i>
             </a>
-            <a className='socialLink card' href='https://www.twitter.com'>
+            <a className='socialLink card' href='https://www.twitter.com' target='_blank  rel="noreferrer"'>
               <i className='fab fa-twitter'></i>
             </a>
-            <a className='socialLink card' href='https://www.facebook.com'>
+            <a className='socialLink card' href='https://www.facebook.com' target='_blank'  rel="noreferrer">
               <i className='fab fa-facebook-f'></i>
             </a>
-            <a className='socialLink card' href='https://www.instagram.com'>
+            <a className='socialLink card' href='https://www.instagram.com' target='_blank'  rel="noreferrer">
               <i className='fab fa-instagram'></i>
             </a>
           </div>
         </div>
         <div className='media'>
-          <div className='col-2' id='quick-links'>
+          <div id='quick-links'>
             <h4>Quick Links</h4>
             <NavLink 
                   activeClassName="active"
@@ -284,7 +312,7 @@ export const Footer = () => {
               >Wholesale</NavLink>
           </div>
 
-          <div className='col-2' id='customer-area'>
+          <div id='customer-area'>
           <h4>Customer Area</h4>
           <NavLink 
                 activeClassName="active"
@@ -318,9 +346,9 @@ export const Footer = () => {
                 >Privacy Policy</NavLink>
           </div>
         </div>
-        <div className='col-4' id='contact'>
-          <h4>Contact</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+        <div id='contact'>
+          <h4 id='h4-contact' className='contact-h4'>Contact</h4>
+          <p className='contact-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
           <div className='contact-details'>
             <div>
               <h6>Have any questions?</h6>
@@ -332,10 +360,11 @@ export const Footer = () => {
           </div>
         </div>
       </FooterStyled>
-      <hr/>
+      <FooterHr className='footer-hr'/>
       
       <Last>
         <p>Daitool - &copy; 2021 All Rights Reserved </p>
+        <br className='second-br'/>
         <div className='payment'>
           <span>Payment</span>
           <p className='blue pay'>Visa</p>

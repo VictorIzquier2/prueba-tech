@@ -6,22 +6,34 @@ import { ProductCard } from './ProductCard';
 
 
 const Scroller = styled.div`
+  width: 100%;
   position: relative;
   `;
-
+  
 const Ad = styled.div`
-  width: 35%;
+  width: 30%;
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 10%;
   transform: translate(-10%, -25%);
   z-index: 10;
+
+  @media(max-width: 768px){
+    h4{
+      display: none;
+    }
+  }
   
   .arrow{
     margin: 4rem 1rem;
     filter: grayscale(100%);
     transition: 0.3s;
+  }
 
+  @media(max-width: 768px){
+    .arrow{
+      margin: 2rem 1rem;
+    }
   }
   .arrow:hover{
     filter: grayscale(0%);
@@ -36,6 +48,11 @@ const ProductList = styled.div`
   white-space: nowrap;
   padding-left: 35%;
   
+  @media(max-width: 768px){
+    background-color: var(--baseWhite);
+    padding-left: 5%;
+  }
+
   `;
 
 
@@ -62,7 +79,7 @@ export const ProductsList = () => {
           onClick={handleScrollLeft}
           />
         <img 
-          className='arrow leftArrow' 
+          className='arrow rightArrow' 
           src='/assets/images/right-arrow.png' 
           alt='rightArrow'
           onClick={handleScrollRight}

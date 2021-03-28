@@ -4,17 +4,32 @@ import styled from '@emotion/styled';
 
 const Values = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  width: 80%;
+  flex-wrap: wrap;
+  width: 90%;
   margin: 4rem auto;
+
+   h4{
+    display: none;
+    color: var(--light);
+    font-size: 2.5rem;
+    text-align: start; 
+    width: 100%;
+  }
+
+  @media(max-width: 768px){
+    h4{ 
+      display: inline;
+      margin-bottom: 4rem;
+    }
+  }
   
   .card {
-    min-width: 19.2rem;
     position: relative;
-    padding: 2.5rem .5rem;
+    min-width: 21rem;
     margin: 2.5rem auto;
+    padding: 2.5rem .5rem;
     border: 1px solid var(--light);
     border-radius: 1.5rem;
     text-align: center;
@@ -36,8 +51,8 @@ const Values = styled.div`
   }
   
   .value img{
-    max-width: 6rem;
     position: absolute;
+    max-width: 6rem;
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%)
@@ -52,11 +67,12 @@ export const ValuesList = () => {
   
   return (
     <Values>
+      <h4>Daitool Promise</h4>
       {
         values.map(value => (
           <div className='value' key={value.id}>            
             <div className='card'>
-              <img src={value.imageUrl}/>
+              <img src={value.imageUrl} alt={value.name}/>
               <h6 className='selected'>{value.name}</h6>
               <p>{value.description}</p>
             </div>

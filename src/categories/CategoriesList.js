@@ -8,7 +8,7 @@ const Categories = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 auto 2rem auto;
+  margin: 2rem auto;
   
   .card{
     padding: 0;
@@ -33,15 +33,39 @@ const Categories = styled.div`
     text-align: center;
   }
 
+  @media(min-width: 768px){
+    .card-body{
+      text-align: start;
+    }
+  }  
+
   .white{
     color: var(--baseWhite);
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
+    width: 80%;
     transform: translate(-50%, -50%)
   }
+
+
+  .white-p{
+    color: var(--baseWhite);
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+  }
+
+  @media(min-width: 768px){
+    .white-p{
+    }
+  }
+
   img{ 
-    max-width: 420px;
+    max-width: 320px;
     border-radius: 1.5rem;
   }
 `;
@@ -59,7 +83,8 @@ export const CategoriesList = () => {
           >
             <div className='card-body'>
               <h3 className='selectedProducts white'>{category.name}</h3>
-              <img src={`${category.imageUrl}`}/>
+              <p className='white-p'>{category.description}</p>
+              <img src={`${category.imageUrl}`} alt={`${category.name}`}/>
             </div>
           </Link>
         ))
