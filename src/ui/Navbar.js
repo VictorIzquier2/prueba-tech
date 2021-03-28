@@ -48,7 +48,7 @@ const MainNav = styled.nav`
     position: relative;
     display: flex;
     align-items: center;
-    margin: 1rem 5rem;
+    margin: 1rem 4rem;
   }
 
   .main-logo{
