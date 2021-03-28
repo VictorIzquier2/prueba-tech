@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { Fragment, useMemo } from 'react';
 import styled from '@emotion/styled';
 
 import { Redirect, useParams } from 'react-router-dom';
@@ -28,6 +28,19 @@ const Product = styled.div`
     justify-content: space-between
   }
 
+  #last-prize small{
+    color: var(--primary)!important;
+  }
+
+  #prize small{
+    text-decoration: line-through;
+  }
+
+  .fa-star{
+    color: var(--primary);
+  }
+
+
 `;
 
 export const ProductScreen = ({history}) => {
@@ -51,22 +64,31 @@ export const ProductScreen = ({history}) => {
   const {name, description, imageUrl, prize, lastPrize, qualification} = product;
 
   return (
-    <Product className='card maxWidth32'>
-      {<img className='card-img-top maxWidth28 animate__animated animate__fadeInLeft' src={imageUrl} alt={name}/>}
+    <Product className='card maxWidth32 animate__animated animate__fadeInLeft'>
+      {<img className='card-img-top maxWidth28' src={imageUrl} alt={name}/>}
       <div className='card-body'>
         <h4 className='card-title'>
           {name}
         </h4>
-        <p className='card-text'>{description}</p>
+        <p id='description' className='card-text'>{description}</p>
         <div className='details'>
-          <p className='card-text'>
+          <p id='last-prize' className='card-text'>
             <small className='text-muted'>{lastPrize}</small>
           </p>
-          <p className='card-text'>
+          <p id='prize' className='card-text'>
             <small className='text-muted'>{prize}</small>
           </p>
-          <p className='card-text'>
-            <small className='text-muted'>{qualification}</small>
+          <p id='stars' className='card-text'>
+            <small className='text-muted'>
+                {qualification === 4 &&
+                <Fragment>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                </Fragment>
+                }
+              </small>
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import {Global, css} from '@emotion/react';
 
-import { Navbar } from '../ui/Navbar';
+import { MyNavbar } from '../ui/Navbar';
 import { HomeScreen } from '../components/home/HomeScreen';
 import { AboutUsScreen } from '../components/aboutUs/AboutUsScreen';
 import { BlogScreen } from '../components/blog/BlogScreen';
@@ -198,7 +198,7 @@ export const DashboardRoutes = ({history}) => {
           
         `}
       />
-      <Navbar history={history}/>
+      <MyNavbar history={history}/>
       <div>
         <Switch>
           <Route exact path='/home' component={HomeScreen}/>

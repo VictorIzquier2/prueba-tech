@@ -1,10 +1,34 @@
-import React, { Fragment, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
+import {Navbar, Nav, Dropdown, NavDropdown, DropdownButton} from 'react-bootstrap';
+
 
 import { AuthContext } from '../auth/AuthContext'
 import { SearchBar } from '../components/search/SearchBar'
 import { types } from '../types/types'
+
+const Global = styled.div`
+
+  #second{
+    display: block;
+  }
+  
+  #third{
+    display: none!important;
+  }
+
+  @media(min-width: 768px){
+    #second{
+      display: none!important;
+    }
+    
+    #third{
+      display: block!important;
+    }
+    
+  }
+`;
 
 const MainNav = styled.nav`
   justify-content: space-between;
@@ -19,6 +43,10 @@ const MainNav = styled.nav`
       align-items: center;
       width: 67%;
     }
+
+  .brand {
+    display: flex;
+  }
 
   .search{
     width: 50%;
@@ -64,16 +92,98 @@ const LogOut = styled.span`
   font-weight: bold;
 `
 
-const SecondNav = styled.nav`
-  background-color: var(--secondary);
+const Second = styled.div`
+  background-color: var(--primary);
+  padding: 1rem;
   
   .nav-link {
-    color: var(--baseWhite);
+    color: var(--baseDark)!important;
+    margin-left: 5rem;
+  }
+  
+  span, h4{
+    color: var(--baseDark);
+    font-weight: bold;
   }
 
-`
+  h4{
+    margin-left: 5rem;
+  }
 
-export const Navbar = ({history}) => {
+  .about{
+    margin-bottom: -2.5rem;
+  }
+  
+  .fa-times{
+    color: var(--baseDark);
+    margin: 2rem;
+  }
+  
+  .white{
+    background-color: white;
+    border: 1px solid var(--light);
+    padding-right: 5rem
+  }
+  .dropdown-divider {
+    margin-left: 5rem;
+  }
+  
+  .fa-phone-alt, .fa-envelope{
+    color: var(--primary)!important;
+    margin-left: 5rem;
+    margin-right: 1rem;
+  }
+
+  .fa-envelope{
+    padding-bottom: 8rem;
+  }
+
+  .primary{
+    color: var(--primary);
+  }
+
+  .dropdown-toggle.btn.btn-primary{
+    background-color: var(--primary)!important;
+    border: none;
+  }
+
+  #drop-right .fa-bars{
+    font-size: 3rem;
+  }
+
+  #drop-right::after{
+    display: none;
+  }
+
+
+
+`
+const ThirdNav = styled.div`
+  background-color: var(--secondary);
+  padding: 1rem; 
+  
+  .nav-link {
+    color: var(--baseWhite)!important;
+  }
+
+  span{
+    color: var(--baseDark);
+    font-weight: bold;
+  }
+  
+  .fa-times{
+    color: var(--baseDark);
+    margin: 2rem;
+  }
+
+  @media(min-width: 768px){
+    .dissapear{
+      display: none;
+    }
+  }
+`;
+
+export const MyNavbar = ({history}) => {
     
     const{user: {name}, dispatch} = useContext(AuthContext);
     
@@ -85,10 +195,47 @@ export const Navbar = ({history}) => {
     }
     
     return (
-    <Fragment>
-      <MainNav className='navbar navbar-expand-sm'>
+
+    <Global>
+
+      <MainNav className='navbar navbar-expand-md'>
         <div className='row'>
           <div className='col-2 brand'>
+          
+          <Second id='second'>
+            <DropdownButton
+              drop='right'
+              id='drop-right'
+              className='bars'
+              menuAlign='right'
+              title={<i class="fas fa-bars"></i>}
+            >
+              <NavDropdown.Item>
+                <Navbar.Brand href="/home">
+                  <i className='fas fa-times dissapear'></i><img className='dissapear' src='/assets/images/logo-daitool-black.png'/>
+                </Navbar.Brand>
+              </NavDropdown.Item>
+              <Nav.Link className='nav-link' href="/safety">Safety</Nav.Link>
+              <Nav.Link className='nav-link' href="/janitorial">Janitorial</Nav.Link>
+              
+              <Nav.Link className='nav-link' href="/tools">Tools</Nav.Link>
+              <Nav.Link className='nav-link' href="/gardening">Gardening</Nav.Link>
+              <Nav.Link className='nav-link' href="/officesupples">Office Supplies</Nav.Link>
+              <Nav.Link className='nav-link' href="/woodworking">Woodworking</Nav.Link>
+              <Nav.Link className='nav-link' href="/gardening">Gardening</Nav.Link>
+              <Nav.Link className='nav-link' href="/officesupples">Office Supplies</Nav.Link>
+              <NavDropdown.Divider />
+              <Navbar.Brand href="/aboutus"><h4 className='about'>About Us</h4></Navbar.Brand>
+              <Nav.Link className='nav-link' href="/blog">Blog</Nav.Link>
+              <Nav.Link className='nav-link' href="/brands">Brands</Nav.Link>
+              <NavDropdown.Divider />
+              <Navbar.Brand href="/aboutus"><h4>Need Help?</h4></Navbar.Brand>
+              <Navbar.Brand href="/aboutus"><span className='primary'><i class="fas fa-phone-alt"></i>+ 123 456 789</span></Navbar.Brand>
+              <br/>
+              <Navbar.Brand href="/aboutus"><span className='primary'><i class="far fa-envelope"></i>info@daitool</span></Navbar.Brand>
+            </DropdownButton>
+          </Second>
+
             <Link 
                 className="navbar-brand" 
                 to="/home"
@@ -103,7 +250,7 @@ export const Navbar = ({history}) => {
               (
                 <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 client-area">
                   <div className="navbar-nav ml-auto">
-                    
+
                     <Button 
                       className='nav-item nav-link btn'
                       onClick={handleLogout}
@@ -131,7 +278,7 @@ export const Navbar = ({history}) => {
                 </div>
               ) :
               (
-               <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                   <div className="navbar-nav ml-auto">
                     <NavLink
                       activeClassName="active"
@@ -139,7 +286,7 @@ export const Navbar = ({history}) => {
                       id='login'
                       exact
                       to="/login"
-                   >Log In</NavLink>
+                      >Log In</NavLink>
                   </div>
                 </div>
               )
@@ -147,93 +294,42 @@ export const Navbar = ({history}) => {
           </div>
       </MainNav>
 
-      <SecondNav className="navbar navbar-expand-sm">
-          <div className="navbar-collapse">
-              <div className="navbar-nav">
+      
+      <ThirdNav id='third'>
+        <Navbar collapseOnSelect expand="md">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <NavDropdown 
+                title="Safety"
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item className='nav-link' href="/safety"><span>View All</span></NavDropdown.Item>
+          
+              </NavDropdown>
 
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/safety"
-                  >
-                      Safety
-                  </NavLink>
+              <Nav.Link className='nav-link' href="/janitorial">Janitorial</Nav.Link>
+              <NavDropdown 
+                title="Tools"
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item className='nav-link' href="/tools"><span>View All</span></NavDropdown.Item>
+              </NavDropdown>
 
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/janitorial"
-                  >
-                      Janitorial
-                  </NavLink>
+              <Nav.Link className='nav-link' href="/woodworking">Woodworking</Nav.Link>
+              <Nav.Link className='nav-link' href="/gardening">Gardening</Nav.Link>
+              <Nav.Link className='nav-link' href="/officesupples">Office Supples</Nav.Link>
+              <Nav.Link className='nav-link' href="/blog">Blog</Nav.Link>
+              <Nav.Link className='nav-link' href="/brands">Brands</Nav.Link>
+              <Nav.Link className='nav-link' href="/aboutus">About Us</Nav.Link>
+              
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
 
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/tools"
-                  >
-                      Tools
-                  </NavLink>
+      </ThirdNav>
+    
+    </Global>
 
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/woodworking"
-                  >
-                      Woodworking
-                  </NavLink>
-
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/gardening"
-                  >
-                      Gardering
-                  </NavLink>
-
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/officesupplies"
-                  >
-                      Office Supplies
-                  </NavLink>
-
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/blog"
-                  >
-                      Blog
-                  </NavLink>
-
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/brands"
-                  >
-                      Brands
-                  </NavLink>
-
-                  <NavLink 
-                      activeClassName="active"
-                      className="nav-item nav-link" 
-                      exact
-                      to="/aboutus"
-                  >
-                      About Us
-                  </NavLink>
-              </div>
-          </div>
-      </SecondNav>
-    </Fragment>
   )
 }
