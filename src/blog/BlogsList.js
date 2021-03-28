@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 import {blogs} from '../data/blogs';
 import { NavLink } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 
 const BlogHeader = styled.header`
@@ -59,7 +60,7 @@ const Blogs = styled.div`
 export const BlogsList = () => {
   
   return (
-    <Fragment>
+    <Container>
       <BlogHeader className='header'>
         <h4>Blog Posts</h4>
         <NavLink className='nav-item nav-link' to='/blog'>+ View All</NavLink>
@@ -79,6 +80,6 @@ export const BlogsList = () => {
           ))
         }
       </Blogs>
-    </Fragment>
+    </Container>
   )
 }

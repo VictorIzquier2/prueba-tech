@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Container } from 'react-bootstrap';
 
 const NewsletterZone = styled.div`
   display: flex;
@@ -29,23 +30,30 @@ const NewsletterZone = styled.div`
       width: 100%
     }
   }
+  
+  .general h4{
+    font-size: 2rem;
+  }
+
+  .general p{
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
 
   .postcards{
-    max-width: 10rem;
-    max-height: 10rem;
-    margin: 0 2rem;
+    max-width: 8rem;
+    max-height: 8rem;
+    margin: 0 1rem;
   }
   
   @media(max-width: 834px){
     .postcards{
       margin: 2rem;
-      max-width: 8rem;
-      max-height: 8rem
     }
   }
 
   .subscribe{
-    margin: 2rem;
+    margin: 1rem;
   }
 
   @media(max-width: 834px){
@@ -99,20 +107,22 @@ const NewsletterZone = styled.div`
 
 export const Newsletter = () => {
   return (
-    <NewsletterZone className='row'>
-        <img src="/assets/images/postcards.png" className="img-fluid postcards" alt="banner"/>
-      <div className='general col -4'>
-        <h4>Sign Up for Newsletter</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div className='subscribe col-4'>
-        <form className='newsletter'>
-          <input
-            placeholder='Enter your email here'
-          />
-          <button>Subscribe</button>
-        </form>
-      </div>
-    </NewsletterZone>
+    <Container>
+      <NewsletterZone className='row'>
+          <img src="/assets/images/postcards.png" className="img-fluid postcards" alt="banner"/>
+        <div className='general col -3'>
+          <h4>Sign Up for Newsletter</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div className='subscribe col-5'>
+          <form className='newsletter'>
+            <input
+              placeholder='Enter your email here'
+            />
+            <button>Subscribe</button>
+          </form>
+        </div>
+      </NewsletterZone>
+    </Container>
   )
 }

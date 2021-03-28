@@ -1,6 +1,7 @@
 import React from 'react';
 import {values} from '../data/values';
 import styled from '@emotion/styled';
+import { Container } from 'react-bootstrap';
 
 const Values = styled.div`
   display: flex;
@@ -66,19 +67,21 @@ const Values = styled.div`
 export const ValuesList = () => {
   
   return (
-    <Values>
-      <h4>Daitool Promise</h4>
-      {
-        values.map(value => (
-          <div className='value' key={value.id}>            
-            <div className='card'>
-              <img src={value.imageUrl} alt={value.name}/>
-              <h6 className='selected'>{value.name}</h6>
-              <p>{value.description}</p>
+    <Container fluid='md'>
+      <Values>
+        <h4>Daitool Promise</h4>
+        {
+          values.map(value => (
+            <div className='value' key={value.id}>            
+              <div className='card'>
+                <img src={value.imageUrl} alt={value.name}/>
+                <h6 className='selected'>{value.name}</h6>
+                <p>{value.description}</p>
+              </div>
             </div>
-          </div>
-        ))
-      }
-    </Values>
+          ))
+        }
+      </Values>
+    </Container>
   )
 }

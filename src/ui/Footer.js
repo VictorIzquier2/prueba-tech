@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { Container } from 'react-bootstrap';
 
 const FooterStyled = styled.div`
   display: flex;
@@ -251,10 +252,9 @@ const Last = styled.footer`
   }
 
 `;
-
 export const Footer = () => {
   return (
-    <Fragment>
+    <Container>
       <FooterStyled id='footer-styled'>
         <div id='social-info'>
           <img src="/assets/images/logo-daitool-black.png" className="img-fluid logo" alt="Daitool black"/>
@@ -374,6 +374,6 @@ export const Footer = () => {
         </div>
       </Last>
 
-    </Fragment>
+    </Container>
   )
 }

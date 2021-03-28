@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import {Navbar, NavbarBrand, Nav, NavDropdown, DropdownButton} from 'react-bootstrap';
+import {Container, Navbar, NavbarBrand, Nav, NavDropdown, DropdownButton} from 'react-bootstrap';
 
 
 import { AuthContext } from '../auth/AuthContext'
@@ -276,133 +276,136 @@ export const MyNavbar = ({history}) => {
 
     <Global>
 
-      <MainNav className='navbar navbar-expand-md'>
-        <div className='row'>
-          <div className='col-2 brand'>
+      <Container fluid='md'>
           
-          <Second id='second'>
-            <DropdownButton
-              drop='right'
-              id='drop-right'
-              className='bars'
-              menuAlign='right'
-              title={<i className="fas fa-bars"></i>}
-            >
-              <NavbarBrand href="/home">
-                <i className='fas fa-times dissapear'></i><img className='dissapear' src='/assets/images/logo-daitool-black.png' alt='Daitool Logo Black'/>
-              </NavbarBrand>
+        <MainNav className='navbar navbar-expand-md'>
+          <div className='row'>
+            <div className='col-2 brand'>
             
-              <Link className='nav-link' to="/safety">Safety</Link>
-              <Link className='nav-link' to="/janitorial">Janitorial</Link>
-              <Link className='nav-link' to="/tools">Tools</Link>
-              <Link className='nav-link' to="/gardening">Gardening</Link>
-              <Link className='nav-link' to="/officesupples">Office Supplies</Link>
-              <Link className='nav-link' to="/woodworking">Woodworking</Link>
-              <Link className='nav-link' to="/gardening">Gardening</Link>
-              <Link className='nav-link' to="/officesupples">Office Supplies</Link>
-              <NavDropdown.Divider />
-              <NavbarBrand href="/aboutus"><h4 className='about'>About Us</h4></NavbarBrand>
-              <Link className='nav-link' to="/blog">Blog</Link>
-              <Link className='nav-link' to="/brands">Brands</Link>
-              <NavDropdown.Divider />
-              <NavbarBrand href="/aboutus"><h4>Need Help?</h4></NavbarBrand>
-              <NavbarBrand href="/aboutus"><span className='primary'><i className="fas fa-phone-alt"></i>+ 123 456 789</span></NavbarBrand>
-              <br/>
-              <NavbarBrand href="/aboutus"><span className='primary'><i className="far fa-envelope"></i>info@daitool</span></NavbarBrand>
-            </DropdownButton>
-          </Second>
-
-            <Link 
-                className="navbar-brand" 
-                to="/home"
-                ><img className='main-logo' src='/assets/images/logo-daitool.png' alt='Daitool Logo'/></Link>
-          </div>
-          <div className='col-4 search'>
-            <SearchBar history={history} />
-          </div>
-        </div>
-          <div className='col-2'>
-            {name ?
-              (
-                <div className="navbar-nav client-area">
-
-                  <Button 
-                    className='nav-item nav-link btn'
-                    onClick={handleLogout}
-                    >
-                      <i className="far fa-user icon"></i>
-                      <LogOut id='log-out'>Log Out</LogOut>
-                  </Button>
-                  
-                  <Button 
-                    className='nav-item nav-link btn'
-                    onClick={handleLogout}
-                    >
-                      <i className="fas fa-shopping-cart icon"></i>
-                      <LogOut id='cart'>Cart</LogOut>
-                  </Button>
-                  <div id='articles'>
-                    <span id='number'>1</span>
-                  </div>
-                  <Button 
-                    className='nav-item nav-link btn'
-                    onClick={handleLogout}
-                    >
-                      <LogOut id='currency'>En|USD</LogOut>
-                  </Button>
-                
-                </div>
-              ) :
-              (
-                <div className="navbar-nav client-area">
-                  <NavLink
-                    activeClassName="active"
-                    className="nav-item nav-link" 
-                    id='login'
-                    exact
-                    to="/login"
-                    >Log In</NavLink>
-                </div>
-              )
-            }
-          </div>
-      </MainNav>
-
-      
-      <ThirdNav id='third'>
-        <Navbar collapseOnSelect expand="md">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <NavDropdown 
-                title="Safety"
-                id="collasible-nav-dropdown"
+            <Second id='second'>
+              <DropdownButton
+                drop='right'
+                id='drop-right'
+                className='bars'
+                menuAlign='right'
+                title={<i className="fas fa-bars"></i>}
               >
-                <NavDropdown.Item className='nav-link' href="/safety"><span>View All</span></NavDropdown.Item>
-          
-              </NavDropdown>
-
-              <Link className='nav-link' to="/janitorial">Janitorial</Link>
-              <NavDropdown 
-                title="Tools"
-                id="collasible-nav-dropdown"
-              >
-                <NavDropdown.Item className='nav-link' href="/tools"><span>View All</span></NavDropdown.Item>
-              </NavDropdown>
-
-              <Link className='nav-link' to="/woodworking">Woodworking</Link>
-              <Link className='nav-link' to="/gardening">Gardening</Link>
-              <Link className='nav-link' to="/officesupples">Office Supples</Link>
-              <Link className='nav-link' to="/blog">Blog</Link>
-              <Link className='nav-link' to="/brands">Brands</Link>
-              <Link className='nav-link' to="/aboutus">About Us</Link>
+                <NavbarBrand href="/home">
+                  <i className='fas fa-times dissapear'></i><img className='dissapear' src='/assets/images/logo-daitool-black.png' alt='Daitool Logo Black'/>
+                </NavbarBrand>
               
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+                <Link className='nav-link' to="/safety">Safety</Link>
+                <Link className='nav-link' to="/janitorial">Janitorial</Link>
+                <Link className='nav-link' to="/tools">Tools</Link>
+                <Link className='nav-link' to="/gardening">Gardening</Link>
+                <Link className='nav-link' to="/officesupples">Office Supplies</Link>
+                <Link className='nav-link' to="/woodworking">Woodworking</Link>
+                <Link className='nav-link' to="/gardening">Gardening</Link>
+                <Link className='nav-link' to="/officesupples">Office Supplies</Link>
+                <NavDropdown.Divider />
+                <NavbarBrand href="/aboutus"><h4 className='about'>About Us</h4></NavbarBrand>
+                <Link className='nav-link' to="/blog">Blog</Link>
+                <Link className='nav-link' to="/brands">Brands</Link>
+                <NavDropdown.Divider />
+                <NavbarBrand href="/aboutus"><h4>Need Help?</h4></NavbarBrand>
+                <NavbarBrand href="/aboutus"><span className='primary'><i className="fas fa-phone-alt"></i>+ 123 456 789</span></NavbarBrand>
+                <br/>
+                <NavbarBrand href="/aboutus"><span className='primary'><i className="far fa-envelope"></i>info@daitool</span></NavbarBrand>
+              </DropdownButton>
+            </Second>
 
-      </ThirdNav>
-    
+              <Link 
+                  className="navbar-brand" 
+                  to="/home"
+                  ><img className='main-logo' src='/assets/images/logo-daitool.png' alt='Daitool Logo'/></Link>
+            </div>
+            <div className='col-4 search'>
+              <SearchBar history={history} />
+            </div>
+          </div>
+            <div className='col-2'>
+              {name ?
+                (
+                  <div className="navbar-nav client-area">
+
+                    <Button 
+                      className='nav-item nav-link btn'
+                      onClick={handleLogout}
+                      >
+                        <i className="far fa-user icon"></i>
+                        <LogOut id='log-out'>Log Out</LogOut>
+                    </Button>
+                    
+                    <Button 
+                      className='nav-item nav-link btn'
+                      onClick={handleLogout}
+                      >
+                        <i className="fas fa-shopping-cart icon"></i>
+                        <LogOut id='cart'>Cart</LogOut>
+                    </Button>
+                    <div id='articles'>
+                      <span id='number'>1</span>
+                    </div>
+                    <Button 
+                      className='nav-item nav-link btn'
+                      onClick={handleLogout}
+                      >
+                        <LogOut id='currency'>En|USD</LogOut>
+                    </Button>
+                  
+                  </div>
+                ) :
+                (
+                  <div className="navbar-nav client-area">
+                    <NavLink
+                      activeClassName="active"
+                      className="nav-item nav-link" 
+                      id='login'
+                      exact
+                      to="/login"
+                      >Log In</NavLink>
+                  </div>
+                )
+              }
+            </div>
+        </MainNav>
+
+        
+        <ThirdNav id='third'>
+          <Navbar collapseOnSelect expand="md">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="mr-auto">
+                <NavDropdown 
+                  title="Safety"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item className='nav-link' href="/safety"><span>View All</span></NavDropdown.Item>
+            
+                </NavDropdown>
+
+                <Link className='nav-link' to="/janitorial">Janitorial</Link>
+                <NavDropdown 
+                  title="Tools"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item className='nav-link' href="/tools"><span>View All</span></NavDropdown.Item>
+                </NavDropdown>
+
+                <Link className='nav-link' to="/woodworking">Woodworking</Link>
+                <Link className='nav-link' to="/gardening">Gardening</Link>
+                <Link className='nav-link' to="/officesupples">Office Supples</Link>
+                <Link className='nav-link' to="/blog">Blog</Link>
+                <Link className='nav-link' to="/brands">Brands</Link>
+                <Link className='nav-link' to="/aboutus">About Us</Link>
+                
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+
+        </ThirdNav>
+      
+      </Container>
     </Global>
 
   )

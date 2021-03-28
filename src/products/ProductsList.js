@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import {products} from '../data/products';
 import { ProductCard } from './ProductCard';
+import { Container } from 'react-bootstrap';
 
 
 const Scroller = styled.div`
@@ -69,37 +70,39 @@ export const ProductsList = () => {
   }
   
   return (
-    <Scroller className='scroller'>
-      <Ad className='ad'>
-        <h4>This Weeks Top 10 Selected Products</h4>
-        <img 
-          className='arrow leftArrow' 
-          src='/assets/images/left-arrow.png' 
-          alt='leftArrow'
-          onClick={handleScrollLeft}
+    <Container fluid='md'>
+      <Scroller className='scroller'>
+        <Ad className='ad'>
+          <h4>This Weeks Top 10 Selected Products</h4>
+          <img 
+            className='arrow leftArrow' 
+            src='/assets/images/left-arrow.png' 
+            alt='leftArrow'
+            onClick={handleScrollLeft}
+            />
+          <img 
+            className='arrow rightArrow' 
+            src='/assets/images/right-arrow.png' 
+            alt='rightArrow'
+            onClick={handleScrollRight}
           />
-        <img 
-          className='arrow rightArrow' 
-          src='/assets/images/right-arrow.png' 
-          alt='rightArrow'
-          onClick={handleScrollRight}
-        />
-      </Ad>
-      <ProductList 
-        id='product-list' 
-        className='card-deck animate__animated animate__fadeIn'
-        ref={productList}
-        >
+        </Ad>
+        <ProductList 
+          id='product-list' 
+          className='card-deck animate__animated animate__fadeIn'
+          ref={productList}
+          >
 
-        {
-          products.map(product => (
-            <ProductCard 
-              { ...product }
-              key={product.id}>
-            </ProductCard>
-          ))
-        }
-      </ProductList>
-    </Scroller>
+          {
+            products.map(product => (
+              <ProductCard 
+                { ...product }
+                key={product.id}>
+              </ProductCard>
+            ))
+          }
+        </ProductList>
+      </Scroller>
+    </Container>
   )
 }

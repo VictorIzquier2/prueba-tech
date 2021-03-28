@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import styled from '@emotion/styled';
 import { Banner1 } from './Banner1';
 import { Banner2 } from './Banner2';
+import { Container } from 'react-bootstrap';
 
 const MyBanner = styled.div`
   position: relative;
@@ -17,56 +18,56 @@ const MyBanner = styled.div`
 
   #pop-subscribe{
     position: absolute;
-    top: calc(10vh + 1vw);
+    top: calc(7.5vh + 1vw);
     left: 15rem;
     transform: translate(-50%, -50%)
   }
 
   @media(max-width: 768px){
      #pop-subscribe{
-      top: calc(10vh + 35vw);
+      top: calc(17.5vh + 5vw);
       left: 10rem;
     }
   } 
 
   @media(max-width: 698px){
      #pop-subscribe{
-      top: calc(15vh + 30vw);
+      top: calc(15vh + 10vw);
       left: 10rem;
     }
   } 
-
+  
   @media(max-width: 640px){
      #pop-subscribe{
-      top: calc(15vh + 25vw);
+      top: calc(12.5vh + 15vw);
       left: 10rem;
     }
   } 
 
   @media(max-width: 598px){
      #pop-subscribe{
-      top: calc(15vh + 20vw);
+      top: calc(10vh + 20vw);
       left: 10rem;
     }
   } 
 
   @media(max-width: 540px){
      #pop-subscribe{
-      top: calc(15vh + 15vw);
+      top: calc(7.5vh + 25vw);
       left: 10rem;
     }
   } 
 
   @media(max-width: 480px){
      #pop-subscribe{
-      top: calc(15vh + 10vw);
+      top: calc(5vh + 30vw);
       left: 9rem;
     }
   } 
 
   @media(max-width: 420px){
      #pop-subscribe{
-      top: calc(15vh + 5vw);
+      top: calc(2.5vh + 35vw);
       left: 8rem;
     }
   } 
@@ -121,21 +122,23 @@ export const Banner = () => {
     }
     
     window.addEventListener('resize', handleWidthState);
-
+    
     return () => {
       window.removeEventListener('resize', handleWidthState);
     }
   }, [width])
   return (
-    <MyBanner>
-      <div className='col-2 postcardsImg'>
-        <div id='pop-subscribe'>
-          <h1>70% off</h1>
-          <SubscribeBtn>Subscribe</SubscribeBtn>
+    <Container>
+      <MyBanner>
+        <div className='col-2 postcardsImg'>
+          <div id='pop-subscribe'>
+            <h1>70% off</h1>
+            <SubscribeBtn>Subscribe</SubscribeBtn>
+          </div>
         </div>
-      </div>
-      {(width > 768) && <Banner1 width={width}/>}
-      {(width <= 768) && <Banner2 width={width}/>}
-    </MyBanner>
+        {(width > 768) && <Banner1 width={width}/>}
+        {(width <= 768) && <Banner2 width={width}/>}
+      </MyBanner>
+    </Container>
   )
 }

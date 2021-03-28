@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom'
 import { Image } from './Image';
 import { Image2 } from './Image2';
+import { Container } from 'react-bootstrap';
 
 const MyCarrusel = styled.div`
   .carousel-item.active{
@@ -11,15 +12,15 @@ const MyCarrusel = styled.div`
   
   .card{
     position: absolute;
-    top: calc(15vh + 1vw);
+    top: calc(8vh + 1vw);
     right: calc(0vh + 10vw);
     background-color: rgba(0,0,0,0); 
   }
 
   @media(max-width: 768px){
-
+    
     .card{
-      top: calc(120vw - 60vh);
+      top: calc(70vw - 10vh);
       right: calc(0vw - 1vh);
     }
   }
@@ -66,23 +67,25 @@ export const Carrusel = () => {
   },[width]);
   
   return (
-    <MyCarrusel id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <div className='card'>
-            <div className='card-body'>
-              <h3 className='card-title'>New Products</h3 >
-              <h4 className='card-text copy'>Japan</h4>
-              <Link
-                className='invitation'
-                to='/categories'
-              >Discover now</Link>
+    <Container fluid='md'>
+      <MyCarrusel id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <div className='card'>
+              <div className='card-body'>
+                <h3 className='card-title'>New Products</h3 >
+                <h4 className='card-text copy'>Japan</h4>
+                <Link
+                  className='invitation'
+                  to='/categories'
+                >Discover now</Link>
+              </div>
             </div>
+            {(width > 768) && <Image width={width}/>}
+            {(width <= 768) && <Image2 width={width}/>}
           </div>
-          {(width > 768) && <Image width={width}/>}
-          {(width <= 768) && <Image2 width={width}/>}
         </div>
-      </div>
-    </MyCarrusel>
+      </MyCarrusel>
+    </Container>
   )
 }

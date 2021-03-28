@@ -2,7 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-import {categories} from '../data/categories';
+import { categories } from '../data/categories';
+import { Container } from 'react-bootstrap';
 
 const Categories = styled.div`
   display: flex;
@@ -73,22 +74,24 @@ const Categories = styled.div`
 export const CategoriesList = () => {
   
   return (
-    <Categories>
-      {
-        categories.map(category => (
-          <Link 
-            className='card' 
-            key={category.id}
-            to={`/${category.name}`}
-          >
-            <div className='card-body'>
-              <h3 className='selectedProducts white'>{category.name}</h3>
-              <p className='white-p'>{category.description}</p>
-              <img src={`${category.imageUrl}`} alt={`${category.name}`}/>
-            </div>
-          </Link>
-        ))
-      }
-    </Categories>
+    <Container fluid='md'>
+      <Categories>
+        {
+          categories.map(category => (
+            <Link 
+              className='card' 
+              key={category.id}
+              to={`/${category.name}`}
+            >
+              <div className='card-body'>
+                <h3 className='selectedProducts white'>{category.name}</h3>
+                <p className='white-p'>{category.description}</p>
+                <img src={`${category.imageUrl}`} alt={`${category.name}`}/>
+              </div>
+            </Link>
+          ))
+        }
+      </Categories>
+    </Container>
   )
 }

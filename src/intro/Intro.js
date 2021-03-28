@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 const IntroDaitool = styled.div`
 
@@ -47,14 +48,16 @@ const IntroDaitool = styled.div`
 
 export const Intro = () => {
   return (
-    <IntroDaitool>
-      <div className='card-body viewCat'>
-        <Link 
-          to='/categories'
-        >viewed category</Link>
-        <h3  className='card-title'>Highlighted Product Category</h3 >
-        <p className='card-text copy'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-      </div>
-    </IntroDaitool>
+    <Container fluid='md'>
+      <IntroDaitool>
+        <div className='card-body viewCat'>
+          <Link 
+            to='/categories'
+          >viewed category</Link>
+          <h3  className='card-title'>Highlighted Product Category</h3 >
+          <p className='card-text copy'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </IntroDaitool>
+    </Container>
   )
 }

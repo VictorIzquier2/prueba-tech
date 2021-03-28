@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import {brands} from '../data/brands';
 import styled from '@emotion/styled';
+import { Container } from 'react-bootstrap';
 
 const Brands = styled.div`
   position: relative;
@@ -85,30 +86,32 @@ export const BrandsList = () => {
   }
   
   return (
-    <Brands
-      id='brands-list'
-      ref={brandsList}
-    >
-      <h4>Our Brands</h4>
-      <img 
-        className='arrow leftArrow' 
-        src='/assets/images/black-arrow-left-deselected.png' 
-        alt='leftArrow'
-        onClick={handleScrollLeft}
-        />
-      <img 
-        className='arrow rightArrow' 
-        src='/assets/images/black-arrow-right-deselected.png'
-        alt='rightArrow'
-        onClick={handleScrollRight}
-        />
-      {
-        brands.map(brand => (
-          <div className='brand' key={brand.id}>
-            <img src={brand.imageUrl} alt={brand.name}/>
-          </div>
-        ))
-      }
-    </Brands>
+    <Container fluid='md'>
+      <Brands
+        id='brands-list'
+        ref={brandsList}
+      >
+        <h4>Our Brands</h4>
+        <img 
+          className='arrow leftArrow' 
+          src='/assets/images/black-arrow-left-deselected.png' 
+          alt='leftArrow'
+          onClick={handleScrollLeft}
+          />
+        <img 
+          className='arrow rightArrow' 
+          src='/assets/images/black-arrow-right-deselected.png'
+          alt='rightArrow'
+          onClick={handleScrollRight}
+          />
+        {
+          brands.map(brand => (
+            <div className='brand' key={brand.id}>
+              <img src={brand.imageUrl} alt={brand.name}/>
+            </div>
+          ))
+        }
+      </Brands>
+    </Container>
   )
 }
