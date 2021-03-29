@@ -46,8 +46,8 @@ const Product = styled.div`
 export const ProductScreen = ({history}) => {
 
   const {productId} = useParams();
-
-  // Obtimización de la consulta productId con el hook de react useMemo
+  
+  // Optimización de la consulta productId con el hook de react useMemo
   const product = useMemo(() => getProductById(Number(productId)), [productId])
   //const product = getProductById(Number(productId));
 
