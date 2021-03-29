@@ -163,7 +163,12 @@ const Second = styled.div`
   
   .nav-link {
     color: var(--baseDark)!important;
-    margin-left: 5rem;
+    margin-left: 4rem;
+    margin-right: 1rem;
+  }
+
+  .nav-link:hover{
+    background-color: var(--light);
   }
   
   span, h4{
