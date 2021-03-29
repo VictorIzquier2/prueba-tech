@@ -380,7 +380,7 @@ export const MyNavbar = ({history}) => {
                   title="Safety"
                   id="collasible-nav-dropdown"
                 >
-                  <NavDropdown.Item className='nav-link' href="/safety"><span>View All</span></NavDropdown.Item>
+                  <Link className='nav-link' href="/safety"><span>View All</span></Link>
             
                 </NavDropdown>
 
@@ -389,7 +389,7 @@ export const MyNavbar = ({history}) => {
                   title="Tools"
                   id="collasible-nav-dropdown"
                 >
-                  <NavDropdown.Item className='nav-link' href="/tools"><span>View All</span></NavDropdown.Item>
+                  <Link className='nav-link' href="/tools"><span>View All</span></Link>
                 </NavDropdown>
 
                 <Link className='nav-link' to="/woodworking">Woodworking</Link>
