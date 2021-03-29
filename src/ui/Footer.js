@@ -132,6 +132,10 @@ const FooterStyled = styled.div`
     text-decoration: none;
     color: var(--baseDark);
   }
+  
+  .nav-link:hover{
+    background-color: var(--light);
+  }
 
   .socialMedia {
     display: flex;
