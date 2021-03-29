@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <Navbar /> Debe de mostrarse correctamente 1`] = `
+<div
+  className="css-193yj6j"
+>
+  <div
+    className="container-md"
+  >
+    <nav
+      className="navbar navbar-expand-md css-196ai3k"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-2 brand"
+        >
+          <div
+            className="css-1b6tjpm"
+            id="second"
+          >
+            <div
+              className="bars dropright"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle btn btn-primary"
+                disabled={false}
+                id="drop-right"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="fas fa-bars"
+                />
+              </button>
+            </div>
+          </div>
+          <a
+            className="navbar-brand"
+            href="/home"
+            onClick={[Function]}
+          >
+            <img
+              alt="Daitool Logo"
+              className="main-logo"
+              src="/assets/images/logo-daitool.png"
+            />
+          </a>
+        </div>
+        <div
+          className="col-4 search"
+        >
+          <div
+            className="css-14dy1a4"
+          >
+            <form
+              onClick={[Function]}
+            >
+              <input
+                autoComplete="off"
+                className="form-control"
+                name="searchText"
+                onChange={[Function]}
+                placeholder="Find your Tool"
+                type="text"
+                value=""
+              />
+              <button
+                className="btn btn-block btn-outline-primary"
+                type="submit"
+              >
+                <img
+                  alt="Lent"
+                  src="/assets/images/lent.png"
+                />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-2"
+      >
+        <div
+          className="navbar-nav client-area"
+        >
+          <button
+            className="nav-item nav-link btn css-1v3vmlh"
+            onClick={[Function]}
+          >
+            <i
+              className="far fa-user icon"
+            />
+            <span
+              className="css-1pgr5eo"
+              id="log-out"
+            >
+              Log Out
+            </span>
+          </button>
+          <button
+            className="nav-item nav-link btn css-1v3vmlh"
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-shopping-cart icon"
+            />
+            <span
+              className="css-1pgr5eo"
+              id="cart"
+            >
+              Cart
+            </span>
+          </button>
+          <div
+            id="articles"
+          >
+            <span
+              id="number"
+            >
+              1
+            </span>
+          </div>
+          <button
+            className="nav-item nav-link btn css-1v3vmlh"
+            onClick={[Function]}
+          >
+            <span
+              className="css-1pgr5eo"
+              id="currency"
+            >
+              En|USD
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      className="css-vs1lk6"
+      id="third"
+    >
+      <nav
+        className="navbar navbar-expand-md navbar-light"
+      >
+        <button
+          aria-controls="responsive-navbar-nav"
+          aria-label="Toggle navigation"
+          className="navbar-toggler collapsed"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          aria-expanded={null}
+          className="navbar-collapse collapse"
+          id="responsive-navbar-nav"
+        >
+          <div
+            className="mr-auto navbar-nav"
+            onKeyDown={[Function]}
+          >
+            <div
+              className="nav-item dropdown"
+            >
+              <a
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle nav-link"
+                data-rb-event-key={null}
+                href="#"
+                id="collasible-nav-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                Safety
+              </a>
+            </div>
+            <a
+              className="nav-link"
+              href="/janitorial"
+              onClick={[Function]}
+            >
+              Janitorial
+            </a>
+            <div
+              className="nav-item dropdown"
+            >
+              <a
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle nav-link"
+                data-rb-event-key={null}
+                href="#"
+                id="collasible-nav-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                Tools
+              </a>
+            </div>
+            <a
+              className="nav-link"
+              href="/woodworking"
+              onClick={[Function]}
+            >
+              Woodworking
+            </a>
+            <a
+              className="nav-link"
+              href="/gardening"
+              onClick={[Function]}
+            >
+              Gardening
+            </a>
+            <a
+              className="nav-link"
+              href="/officesupples"
+              onClick={[Function]}
+            >
+              Office Supples
+            </a>
+            <a
+              className="nav-link"
+              href="/blog"
+              onClick={[Function]}
+            >
+              Blog
+            </a>
+            <a
+              className="nav-link"
+              href="/brands"
+              onClick={[Function]}
+            >
+              Brands
+            </a>
+            <a
+              className="nav-link"
+              href="/aboutus"
+              onClick={[Function]}
+            >
+              About Us
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+`;

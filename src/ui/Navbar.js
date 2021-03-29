@@ -269,7 +269,7 @@ const ThirdNav = styled.div`
 export const MyNavbar = ({history}) => {
     
     const{user: {name}, dispatch} = useContext(AuthContext);
-    
+
     const handleLogout = () => {
         dispatch({
             type: types.logout,
