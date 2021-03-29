@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AppRouter /> Debe mostrar el login si no está autentificado 1`] = `
+Array [
+  "",
+  <div>
+    <div
+      className="container-md"
+    >
+      <div
+        className="css-1x1tiio"
+      >
+        <form
+          id="login-form"
+          onClick={[Function]}
+        >
+          <div
+            className="form-group"
+            id="login"
+          >
+            <label
+              htmlFor="name"
+            >
+              Name
+            </label>
+            <input
+              aria-describedby="nameHelp"
+              className="form-control"
+              defaultValue="Invitado"
+              disabled={true}
+              name="name"
+              onChange={[Function]}
+              type="text"
+            />
+            <small
+              className="form-text texte-muted"
+              id="nameHelp"
+            >
+              Welcome to Daitool!
+            </small>
+          </div>
+          <button
+            className="btn"
+            onClick={[Function]}
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>,
+]
+`;
