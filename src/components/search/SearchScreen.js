@@ -2,6 +2,16 @@ import React, { useMemo } from 'react';
 import queryString from 'query-string';
 import { products } from '../../data/products';
 import { ProductCard } from '../../products/ProductCard';
+import { Container } from 'react-bootstrap';
+import styled from '@emotion/styled';
+
+const Search = styled.div`
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+`;
 
 export const SearchScreen = ({match}) => {
 
@@ -14,16 +24,19 @@ export const SearchScreen = ({match}) => {
   const productsFiltered = useMemo(() => products.filter(product => product.name.includes(q) || product.description.includes(q) || product.category.includes(q)), [q]);
   
   return (
-    <div>
-      {
-        productsFiltered.map(product => (
-          <ProductCard
-            key={product.id}
-            {...product}
-          />
-        ))
-      }
-
-    </div>
+    <Container fluid='md'>
+      <Search>
+        <div className='grid'>
+          {
+            productsFiltered.map(product => (
+              <ProductCard
+                key={product.id}
+                {...product}
+              />
+            ))
+          }
+        </div>
+      </Search>
+    </Container>
   )
 }
